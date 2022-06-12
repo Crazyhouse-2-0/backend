@@ -3,6 +3,15 @@ import { GameSchema } from "../models/gameModel";
 
 const Game = mongoose.model('Game', GameSchema);
 
+export const getAllGames = (req, res) => {
+    Game.find({}, (err, Game) => {
+        if (err){
+            res.send(err)
+        }
+        res.json(Game)
+    })
+}
+
 export const addNewGame = (req, res) => {
     let newGame = new Game(req.body);
 
