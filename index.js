@@ -7,8 +7,7 @@ import playerRoutes from './routes/playerRoutes';
 import gameRoutes from './routes/gameRoutes';
 
 const app = express();
-const PORT = process.env.PORT;
-
+const PORT = process.env.PORT || 4000;
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
